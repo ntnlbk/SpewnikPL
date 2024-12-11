@@ -59,6 +59,15 @@ dependencies {
     implementation(libs.androidx.navigation.dynamic.features.fragment)
     api(libs.androidx.navigation.fragment.ktx)
 
+    //preferences data store
+    implementation (libs.androidx.datastore.preferences)
+
+    //color picker
+    implementation (libs.colorpickerview)
+
+    //drawer layout, navigation view
+    implementation(libs.androidx.drawerlayout)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
