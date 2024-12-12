@@ -1,3 +1,33 @@
 <resources>
-    <string name="app_name">SpewnikPL</string>
+    <string name="app_name">Śpiewnik</string>
+    <string name="confirm">Zapisz</string>
+    <string name="cancel">Cofnij</string>
+    <string name="find">Szukaj</string>
+    <string name="all">Wszystko</string>
+    <string name="parts">Część mszy</string>
+    <string name="short_songs">Krótka</string>
+    <string name="long_songs">Długa</string>
+    <string name="main">Strona główna</string>
+    <string name="information">Informacje</string>
+    <string name="options">Ustawienia</string>
+    <string name="random_song">Wylosuj pieśń</string>
+    <string name="help_project">Wesprzyj projekt, oceń Śpiewnik!</string>
+    <string name="main_information">O aplikacji</string>
+    <string name="made_by_flynid">Stworzona przez FlyNid</string>
+    <string name="waladarka">Sanktuarium Matki Bożej Królowej Jezior</string>
+    <string name="braslaw">Brasław</string>
+    <string name="year">2024</string>
+    <string name="connection">Kontakt</string>
+    <string name="mail">ntnlbk@gmail.com</string>
+    <string name="update_is_available">Dostępna nowa wersja aplikacji!</string>
+    <string name="please_update">Proszę, uaktualnij aplikację.</string>
+    <string name="update">Aktualizuj</string>
+    <string name="skip_update">Pomiń aktualizację</string>
+    <string name="show_chords">Wyświetlaj akordy</string>
+    <string name="transpose">Transponuj</string>
+    <string name="change_chords_color">Zmień kolor akordów</string>
+    <string name="dark_theme">Tryb ciemny</string>
+    <string name="text_size">Rozmiar czcionki</string>
+    <string name="accept">Zapisz</string>
+    <string name="app_name_menu">Śpiewnik</string>
 </resources>
