@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "322895303755",
+    "project_id": "spewnikpl",
+    "storage_bucket": "spewnikpl.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:322895303755:android:b6c727c2170806253229ce",
+        "android_client_info": {
+          "package_name": "com.libbib.spewnikpl"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBV9DEV7HpXPto9TuKfsuw_6s0PjzRBxjM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
