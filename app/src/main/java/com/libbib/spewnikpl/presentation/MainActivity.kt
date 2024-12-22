@@ -7,6 +7,8 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.lifecycleScope
+import com.google.firebase.Firebase
+import com.google.firebase.database.database
 import com.libbib.spewnikpl.R
 import com.libbib.spewnikpl.databinding.ActivityMainBinding
 import com.libbib.spewnikpl.di.SpewnikApplication
@@ -20,8 +22,8 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
-    //@Inject
-    //lateinit var getActualVersionUseCase: GetActualVersionUseCase
+    @Inject
+    lateinit var getActualVersionUseCase: GetActualVersionUseCase
 
     private val component by lazy {
         (application as SpewnikApplication).component
@@ -33,20 +35,20 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         clearActivity()
-//        lifecycleScope.launch {
-//            checkUpdate()
-//        }
+
+        lifecycleScope.launch {
+            checkUpdate()
+        }
     }
 
 
-
-//    private suspend fun checkUpdate() {
-//        getActualVersionUseCase.invoke().collect {
-//            if (it != BUILD_ACTUAL_VERSION) {
-//                showUpdateDialog()
-//            }
-//        }
-//    }
+    private suspend fun checkUpdate() {
+        getActualVersionUseCase.invoke().collect {
+            if (it != BUILD_ACTUAL_VERSION) {
+                showUpdateDialog()
+            }
+        }
+    }
 
     private fun showUpdateDialog() {
         val title: String = getString(R.string.update_is_available)
@@ -80,8 +82,9 @@ class MainActivity : AppCompatActivity() {
         )
     }
 
-    companion object{
-        private const val BUILD_ACTUAL_VERSION = 15
+    companion object {
+        private const val BUILD_ACTUAL_VERSION = 1
+        //TODO BEFORE RELEASE ADD ACTUAL GOOGLE PLAY URL
         const val GOOGLE_PLAY_APP = "https://play.google.com/store/apps/details?id=com.LibBib.spevn"
         const val GOOGLE_PLAY_APP_URL = "market://details?id=com.LibBib.spevn"
     }
