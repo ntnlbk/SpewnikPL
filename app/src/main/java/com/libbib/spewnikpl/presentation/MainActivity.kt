@@ -7,8 +7,6 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.lifecycleScope
-import com.google.firebase.Firebase
-import com.google.firebase.database.database
 import com.libbib.spewnikpl.R
 import com.libbib.spewnikpl.databinding.ActivityMainBinding
 import com.libbib.spewnikpl.di.SpewnikApplication
