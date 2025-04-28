@@ -61,7 +61,8 @@ class SongListFragment : Fragment() {
                 binding.allBtn,
                 binding.partsOfMessBtn,
                 binding.longBtn,
-                binding.shortBtn
+                binding.shortBtn,
+                binding.carolsBtn
             )
         return binding.root
     }
@@ -171,6 +172,7 @@ class SongListFragment : Fragment() {
             SongType.LONG -> binding.longBtn
             SongType.SHORT -> binding.shortBtn
             SongType.PART_OF_MASS -> binding.partsOfMessBtn
+            SongType.CAROLS -> binding.carolsBtn
         }
         textViewClicked.setTextColor(
             ContextCompat.getColor(requireActivity(), R.color.C2)
@@ -226,10 +228,5 @@ class SongListFragment : Fragment() {
     override fun onDestroyView() {
         _binding = null
         super.onDestroyView()
-    }
-
-    companion object {
-        private const val AD_UNIT_ID = "ca-app-pub-2762019052396240/1577836946"
-
     }
 }

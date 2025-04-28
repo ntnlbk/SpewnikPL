@@ -32,6 +32,8 @@ class SongMapper @Inject constructor(
         val shortStringType = context.getString(R.string.short_songs).lowercase()
         val longStringType = context.getString(R.string.long_songs).lowercase()
         val partOfMassStringType = context.getString(R.string.parts).lowercase()
+        val carolStringType = context.getString(R.string.carols).lowercase()
+
         val setTypes = mutableSetOf<SongType>()
         val stringTypesLowerCase = stringTypes.lowercase()
         setTypes.add(SongType.ALL)
@@ -41,6 +43,8 @@ class SongMapper @Inject constructor(
             setTypes.add(SongType.LONG)
         if (stringTypesLowerCase.contains(partOfMassStringType))
             setTypes.add(SongType.PART_OF_MASS)
+        if (stringTypesLowerCase.contains(carolStringType))
+            setTypes.add(SongType.CAROLS)
         return setTypes
     }
 

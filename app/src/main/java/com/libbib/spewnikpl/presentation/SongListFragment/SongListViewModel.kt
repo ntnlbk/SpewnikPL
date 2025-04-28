@@ -56,6 +56,7 @@ class SongListViewModel @Inject constructor(
             context.getString(R.string.parts) -> SongType.PART_OF_MASS
             context.getString(R.string.short_songs) -> SongType.SHORT
             context.getString(R.string.long_songs) -> SongType.LONG
+            context.getString(R.string.carols) -> SongType.CAROLS
             else -> {
                 throw Exception("Unknown StringType")
             }

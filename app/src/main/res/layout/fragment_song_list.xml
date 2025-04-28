@@ -122,6 +122,16 @@
                     android:text="@string/long_songs"
                     android:textColor="@color/C4"
                     android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/carols_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="44dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/myfont"
+                    android:text="@string/carols"
+                    android:textColor="@color/C4"
+                    android:textSize="16sp" />
 
             </LinearLayout>
         </HorizontalScrollView>
