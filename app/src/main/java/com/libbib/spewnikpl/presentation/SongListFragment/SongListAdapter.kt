@@ -43,49 +43,69 @@ class SongListAdapter @Inject constructor(
             onSongItemClickListener?.invoke(song)
         }
         if (isSearch) {
-            val songName = song.name
-            val idStart = songName.lowercase().indexOf(stringToColor)
-            if (idStart >= 0) {
-                val span = SpannableStringBuilder(songName)
-                span.setSpan(
-                    ForegroundColorSpan(ContextCompat.getColor(application, R.color.yellow)),
-                    idStart,
-                    idStart + stringToColor.length,
-                    Spannable.SPAN_EXCLUSIVE_INCLUSIVE
-                )
-                holder.binding.tvName.text = span
-            }
-            if (stringToColor.length > SongListViewModel.MIN_CHAR_TO_SEARCH_TEXT) {
-                var songText = song.text
-                val lines = songText.lines()
-                songText = lines
-                    .filterNot {
-                        it.isEmpty()
-                    }
-                    .filterNot {
-                        it[0]== SongViewModel.CHORD_LINE_BEGIN
-                    }
-                    .joinToString()
-                val idStartText = songText.lowercase().indexOf(stringToColor)
-                if (idStartText >= 0) {
+            colorSong(song, holder)
+        }
+    }
 
-                    var subString =
-                        if (idStartText + HOW_MANY_CHARS_TO_COLOR_IN_TEXT < songText.length) songText.substring(
-                            idStartText,
-                            idStartText + HOW_MANY_CHARS_TO_COLOR_IN_TEXT
-                        ) else songText.substring(idStartText, songText.length)
-                    subString = subString.filter { it != '\n' }
-                    val span = SpannableStringBuilder(subString)
-                    span.setSpan(
-                        ForegroundColorSpan(ContextCompat.getColor(application, R.color.yellow)),
-                        0,
-                        stringToColor.length,
-                        Spannable.SPAN_EXCLUSIVE_INCLUSIVE
-                    )
-                    holder.binding.tvTypes.text = span
-                }
-            }
+    private fun colorSong(
+        song: Song,
+        holder: SongViewHolder,
+    ) {
+        colorName(song, holder)
+        if (stringToColor.length > SongListViewModel.MIN_CHAR_TO_SEARCH_TEXT) {
+            colorText(song, holder)
+        }
+    }
 
+    private fun colorText(
+        song: Song,
+        holder: SongViewHolder,
+    ) {
+        var songText = song.text
+        val lines = songText.lines()
+        songText = lines
+            .filterNot {
+                it.isEmpty()
+            }
+            .filterNot {
+                it[0] == SongViewModel.CHORD_LINE_BEGIN
+            }
+            .joinToString()
+        val idStartText = songText.lowercase().indexOf(stringToColor)
+        if (idStartText >= 0) {
+
+            var subString =
+                if (idStartText + HOW_MANY_CHARS_TO_COLOR_IN_TEXT < songText.length) songText.substring(
+                    idStartText,
+                    idStartText + HOW_MANY_CHARS_TO_COLOR_IN_TEXT
+                ) else songText.substring(idStartText, songText.length)
+            subString = subString.filter { it != '\n' }
+            val span = SpannableStringBuilder(subString)
+            span.setSpan(
+                ForegroundColorSpan(ContextCompat.getColor(application, R.color.yellow)),
+                0,
+                stringToColor.length,
+                Spannable.SPAN_EXCLUSIVE_INCLUSIVE
+            )
+            holder.binding.tvTypes.text = span
+        }
+    }
+
+    private fun colorName(
+        song: Song,
+        holder: SongViewHolder,
+    ) {
+        val songName = song.name
+        val idStart = songName.lowercase().indexOf(stringToColor)
+        if (idStart >= 0) {
+            val span = SpannableStringBuilder(songName)
+            span.setSpan(
+                ForegroundColorSpan(ContextCompat.getColor(application, R.color.yellow)),
+                idStart,
+                idStart + stringToColor.length,
+                Spannable.SPAN_EXCLUSIVE_INCLUSIVE
+            )
+            holder.binding.tvName.text = span
         }
     }
 

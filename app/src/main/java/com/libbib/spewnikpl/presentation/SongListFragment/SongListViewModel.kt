@@ -49,7 +49,8 @@ class SongListViewModel @Inject constructor(
                     song.types.contains(typeToSort)
                 } else ArrayList<Song>()
             val sortedList = sortedListByName + sortedListByText
-            _state.value = SongListFragmentState.Content(sortedList, typeToSort)
+
+            _state.value = SongListFragmentState.Content(sortedList.distinct(), typeToSort)
         }
     }
 
