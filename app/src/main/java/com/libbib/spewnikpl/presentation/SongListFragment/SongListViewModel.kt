@@ -1,4 +1,5 @@
 package com.libbib.spewnikpl.presentation.SongListFragment
+
 import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -35,15 +36,23 @@ class SongListViewModel @Inject constructor(
     }
 
     private fun sortAndSearchInList() {
-        if (this::actualList.isInitialized){
-            val sortedList = actualList.filter { song ->
+        if (this::actualList.isInitialized) {
+            val sortedListByName = actualList.filter { song ->
                 song.name.lowercase().contains(stringToSearch.lowercase())
             }.filter { song ->
                 song.types.contains(typeToSort)
             }
+            val sortedListByText =
+                if (stringToSearch.length > MIN_CHAR_TO_SEARCH_TEXT) actualList.filter { song ->
+                    song.text.lowercase().contains(stringToSearch.lowercase())
+                }.filter { song ->
+                    song.types.contains(typeToSort)
+                } else ArrayList<Song>()
+            val sortedList = sortedListByName + sortedListByText
             _state.value = SongListFragmentState.Content(sortedList, typeToSort)
         }
     }
+
 
     fun searchInList(chars: String) {
         stringToSearch = chars
@@ -63,6 +72,10 @@ class SongListViewModel @Inject constructor(
         }
         typeToSort = type
         sortAndSearchInList()
+    }
+
+    companion object {
+        const val MIN_CHAR_TO_SEARCH_TEXT = 3
     }
 }
 

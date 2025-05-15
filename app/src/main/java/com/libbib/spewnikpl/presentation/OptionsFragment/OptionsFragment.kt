@@ -37,7 +37,6 @@ class OptionsFragment : Fragment() {
     private val binding: FragmentOptionsBinding
         get() = _binding ?: throw Exception("FragmentOptionsBinding is null")
 
-    private var actualIsDarkMode: Boolean = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

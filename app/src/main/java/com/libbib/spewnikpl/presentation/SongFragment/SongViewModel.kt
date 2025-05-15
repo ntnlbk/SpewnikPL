@@ -93,7 +93,7 @@ class SongViewModel @AssistedInject constructor(
 
         private const val ZERO_TRANSPOSE = 0
         private const val EMPTY_STRING = ""
-        private const val CHORD_LINE_BEGIN = '|'
+        const val CHORD_LINE_BEGIN = '|'
         private const val NEW_LINE_CHAR = '\n'
 
         @Suppress("UNCHECKED_CAST")
