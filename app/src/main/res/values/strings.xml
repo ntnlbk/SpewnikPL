@@ -16,7 +16,7 @@
     <string name="made_by_flynid">Stworzona przez FlyNid</string>
     <string name="waladarka">Sanktuarium Matki Bożej Królowej Jezior</string>
     <string name="braslaw">Brasław</string>
-    <string name="year">2024</string>
+    <string name="year">2025</string>
     <string name="connection">Kontakt</string>
     <string name="mail">ntnlbk@gmail.com</string>
     <string name="update_is_available">Dostępna nowa wersja aplikacji!</string>
@@ -31,4 +31,10 @@
     <string name="accept">Zapisz</string>
     <string name="app_name_menu">Śpiewnik</string>
     <string name="carols">Kolęda</string>
+    <string name="added_from">Dodano dzięki FMO – Franciszkańska Młodzież Oazowa</string>
+    <string name="fmo_about">Za pośrednictwem śpiewnika FMO\nFranciszkańska Młodzież Oazowa</string>
+    <string name="back_button_content_description">Back button</string>
+    <string name="flynid_logo_content_description">flynid logo</string>
+    <string name="fmo_logo_content_description">FMO logo</string>
+    <string name="options_button_content_description">options button</string>
 </resources>

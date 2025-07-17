@@ -10,6 +10,7 @@
         android:layout_width="82dp"
         android:layout_height="71.57dp"
         android:background="#00FFFFFF"
+        android:contentDescription="@string/back_button_content_description"
         android:paddingStart="32dp"
         android:paddingTop="24.42dp"
         android:paddingEnd="30dp"
@@ -64,8 +65,9 @@
         android:id="@+id/flynid_icon_iv"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="19dp"
+        android:contentDescription="@string/flynid_logo_content_description"
         app:layout_constraintStart_toEndOf="@id/made_by_flynid_tv"
         app:layout_constraintTop_toBottomOf="@id/main_information_tv"
         app:srcCompat="@drawable/flynid" />
@@ -108,18 +110,42 @@
         app:layout_constraintTop_toBottomOf="@id/braslaw_tv" />
 
     <TextView
+        android:id="@+id/fmo_info_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/myfont"
+        android:text="@string/fmo_about"
+        android:textColor="@color/C2"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/year_tv" />
+
+    <ImageView
+        android:id="@+id/fmo_logo_iv"
+        android:layout_width="76dp"
+        android:layout_height="76dp"
+        android:layout_marginStart="10dp"
+        android:contentDescription="@string/fmo_logo_content_description"
+        app:layout_constraintStart_toEndOf="@id/fmo_info_tv"
+        app:layout_constraintBottom_toBottomOf="@id/fmo_info_tv"
+        app:layout_constraintTop_toTopOf="@id/fmo_info_tv"
+        app:srcCompat="@drawable/fmo_logo" />
+
+    <TextView
         android:id="@+id/connection_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="26dp"
-        android:layout_marginTop="31dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="@font/myfont"
         android:text="@string/connection"
         android:textColor="@color/C2"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/year_tv" />
+        app:layout_constraintTop_toBottomOf="@id/fmo_info_tv" />
 
     <TextView
         android:id="@+id/mail_tv"

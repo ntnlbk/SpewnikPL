@@ -10,11 +10,23 @@
     android:scrollbars="vertical">
 
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="97dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="7dp"
+        android:contentDescription="@string/fmo_logo_content_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/fmo_logo" />
+
     <ImageButton
         android:id="@+id/back_btn"
         android:layout_width="85dp"
         android:layout_height="80dp"
         android:background="#00FFFFFF"
+        android:contentDescription="@string/back_button_content_description"
         android:padding="28dp"
         android:scaleType="fitXY"
         android:src="@drawable/yellow_back_icon"
@@ -22,10 +34,21 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/song_name_tv"
-        android:layout_width="wrap_content"
+        android:id="@+id/author_tv"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="@string/added_from"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/song_name_tv" />
+
+    <TextView
+        android:id="@+id/song_name_tv"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="65dp"
         android:fontFamily="@font/myfont"
         android:gravity="center"
         android:textColor="@color/C2"
@@ -34,7 +57,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/back_btn"
+        app:layout_constraintTop_toTopOf="parent"
         tools:text="name" />
 
     <TextView
@@ -51,7 +74,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/song_name_tv"
+        app:layout_constraintTop_toBottomOf="@id/author_tv"
         tools:text="text" />
 
     <ImageButton
@@ -61,6 +84,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="30dp"
         android:background="#00FFFFFF"
+        android:contentDescription="@string/options_button_content_description"
         android:scaleType="fitXY"
         android:src="@drawable/options_icon"
         app:layout_constraintBottom_toBottomOf="parent"
