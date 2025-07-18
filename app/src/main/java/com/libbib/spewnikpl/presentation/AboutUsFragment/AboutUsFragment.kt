@@ -2,7 +2,6 @@ package com.libbib.spewnikpl.presentation.AboutUsFragment
 
 import android.content.ActivityNotFoundException
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.libbib.spewnikpl.databinding.FragmentAboutUsBinding
 import com.libbib.spewnikpl.presentation.MainActivity.Companion.GOOGLE_PLAY_APP
 import com.libbib.spewnikpl.presentation.MainActivity.Companion.GOOGLE_PLAY_APP_URL
+import androidx.core.net.toUri
 
 class AboutUsFragment : Fragment() {
 
@@ -30,9 +30,9 @@ class AboutUsFragment : Fragment() {
         }
         binding.helpProjectBtn.setOnClickListener {
             try {
-                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(GOOGLE_PLAY_APP_URL)))
+                startActivity(Intent(Intent.ACTION_VIEW, GOOGLE_PLAY_APP_URL.toUri()))
             } catch (e: ActivityNotFoundException) {
-                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(GOOGLE_PLAY_APP)))
+                startActivity(Intent(Intent.ACTION_VIEW, GOOGLE_PLAY_APP.toUri()))
             }
         }
     }

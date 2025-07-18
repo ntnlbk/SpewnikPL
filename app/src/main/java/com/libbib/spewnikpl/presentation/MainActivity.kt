@@ -1,7 +1,6 @@
 package com.libbib.spewnikpl.presentation
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -14,6 +13,7 @@ import com.libbib.spewnikpl.domain.remoteDB.GetActualVersionUseCase
 import com.libbib.spewnikpl.presentation.SongFragment.SongFragment.Companion.SONG_FRAGMENT_BACK_STACK_NAME
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+import androidx.core.net.toUri
 
 
 class MainActivity : AppCompatActivity() {
@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
         ) { _, _ ->
             val intent = Intent(
                 Intent.ACTION_VIEW,
-                Uri.parse(GOOGLE_PLAY_APP)
+                GOOGLE_PLAY_APP.toUri()
             )
             startActivity(intent)
         }
